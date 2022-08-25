@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class Main
+{
+    String name;
+    String date;
+    public void read()
+    {
+        System.out.println("enter the name and date of birth of customer in dd/mm/yyyy formate");
+        Scanner input = new Scanner(System.in);
+        name=input.next();
+        date=input.next();
+   
+    }
+    public void display()
+    {
+        System.out.print(name+",");
+        String delims="/";
+        StringTokenizer st= new StringTokenizer(date,delims);
+        while(st.hasMoreElements())
+        {
+            System.out.print(st.nextElement()+",");
+            
+        }
+        System.out.println();
+    }
+	public static void main(String[] args) {
+	    Main []cus=new Main[30];
+	    int n,i;
+	    System.out.println("enter the number of customer");
+	    Scanner sc=new Scanner(System.in);
+	    n=sc.nextInt();
+	    for(i=0;i<n;i++)
+	    {
+	        cus[i]=new Main();
+	        cus[i].read();
+	    }
+	    for(i=0;i<n;i++)
+	    {
+	        
+	        cus[i].display();
+	    }
+	   sc.close();
+
+		
+	}
+}
